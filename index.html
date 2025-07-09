@@ -22,19 +22,29 @@
   </head>
 
   <body>
-    <div class="cabecalho">
-      <div class="cabecalho__nav">
-        <a>
-          <img class="cabecalho__nav--logo" src="./assets/logo.png" />
+    <header class="cabecalho">
+      <nav class="cabecalho__nav">
+        <a href="#">
+          <img
+            class="cabecalho__nav--logo"
+            src="./assets/logo.png"
+            alt="Logo da Calmaria Spa"
+          />
         </a>
         <span class="cabecalho__nav--line"></span>
-        <div class="cabecalho__nav--lista">
-          <div class="cabecalho__lista-item"><a href="#">Espaço</a></div>
-          <div class="cabecalho__lista-item"><a href="#">Serviços</a></div>
-          <div class="cabecalho__lista-item"><a href="#">Contato</a></div>
-        </div>
-      </div>
-    </div>
+        <ul class="cabecalho__nav--lista">
+          <li class="cabecalho__lista-item">
+            <a href="#">Espaço</a>
+          </li>
+          <li class="cabecalho__lista-item">
+            <a href="#">Serviços</a>
+          </li>
+          <li class="cabecalho__lista-item">
+            <a href="#contato-formulario">Contato</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
     <div class="container">
       <div class="container__primeiro">
@@ -47,6 +57,7 @@
         <img
           class="container__primeiro--imagem"
           src="./assets/home-image.png"
+          alt="Mulher recebendo massagem deitada de bruços com a cabeça de lado sobre os braços cruzados e expressão de tranquilidade."
         />
       </div>
 
@@ -55,6 +66,7 @@
           <img
             class="container__secao--conteudo--img1"
             src="./assets/espaco-1.png"
+            alt="Piscina coberta com uma claraboia redonda, grande e rodeada com jardinagem."
           />
           <div class="container__secao--conteudo--textos">
             <h1 class="container__secao--conteudo--textos-titulo">
@@ -89,10 +101,12 @@
             <img
               class="container__secao--conteudo--img2"
               src="./assets/espaco-2.png"
+              alt="Busto de uma mulher de costas em uma banheira de espumas segurando uma taça e de frente a uma porta de vidro com grandes pedras atrás."
             />
             <img
               class="container__secao--conteudo--img2"
               src="./assets/espaco-3.png"
+              alt="Ambiente da Calmaria Spa com poltrona, plantas e uma piscina."
             />
           </div>
         </div>
@@ -100,7 +114,7 @@
 
       <div class="container container__cards">
         <div class="container__cards--card">
-          <img src="./assets/icon-massagem.png" />
+          <img src="./assets/icon-massagem.png" alt="" />
           <h1 class="container__cards--card-title">Massagens</h1>
           <img src="./assets/soft-star.png" />
           <p class="container__cards--card-texto">
@@ -110,9 +124,9 @@
           </p>
         </div>
         <div class="container__cards--card">
-          <img src="./assets/icon-tratamentos.png" />
+          <img src="./assets/icon-tratamentos.png" alt="" />
           <h1 class="container__cards--card-title">Tratamentos</h1>
-          <img src="./assets/soft-star.png" />
+          <img src="./assets/soft-star.png" alt="" />
           <p class="container__cards--card-texto">
             Sua pele gentilmente tratada com peelings, liftings, hidratações
             profundas do corpo e do rosto, além de limpeza facial e banhos
@@ -120,9 +134,9 @@
           </p>
         </div>
         <div class="container__cards--card">
-          <img src="./assets/icon-dias-especiais.png" />
+          <img src="./assets/icon-dias-especiais.png" alt="" />
           <h1 class="container__cards--card-title">Day Spa</h1>
-          <img src="./assets/soft-star.png" />
+          <img src="./assets/soft-star.png" alt="" />
           <p class="container__cards--card-texto">
             Pacotes que vão desde o "Dia revitalizante" com massagens e
             tratamentos faciais, até o "Dia serenidade" com banhos terapêuticos
@@ -135,10 +149,12 @@
         <img
           class="container__incricao--mobile"
           src="./assets/mandala-superior-mobile.svg"
+          alt=""
         />
         <img
           class="container__incricao--tablet"
           src="./assets/mandala-esquerda-tablet.svg"
+          alt=""
         />
         <div class="container__incricao--div">
           <h1 class="container__incricao--form-titulo">
@@ -156,20 +172,35 @@
         <img
           class="container__incricao--mobile"
           src="./assets/mandala-inferior-mobile.svg"
+          alt=""
         />
         <img
           class="container__incricao--tablet"
           src="./assets/mandala-direita-tablet.svg"
+          alt=""
         />
       </div>
 
       <div class="container__contato">
         <div class="container__contato--img">
-          <img src="./assets/contato-img-1.png" />
-          <img src="./assets/contato-img-2.png" />
-          <img src="./assets/contato-img-3.png" />
+          <img
+            src="./assets/contato-img-1.png"
+            alt="Homem em uma banheira com produtos de spa no rosto."
+          />
+          <img
+            src="./assets/contato-img-2.png"
+            alt="Mulher em uma banheira olhando o horizonte na janela."
+          />
+          <img
+            src="./assets/contato-img-3.png"
+            alt="Mulher em uma banheira com pétalas de rosa, com apenas mãos e pernas aparentes, segurando um livro e com uma bandeija com uvas e chá."
+          />
         </div>
-        <div action="." class="container__contato--form">
+        <div
+          action="."
+          id="contato-formulario"
+          class="container__contato--form"
+        >
           <div class="container__contato--form-conteudo">
             <h1 class="container__contato--form-conteudo-titulo">
               Entre em contato
