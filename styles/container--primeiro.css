@@ -25,15 +25,16 @@
 
 .container__primeiro--texto h1 span {
   color: var(--azul-escuro);
+  font-weight: 700;
 }
 
 .container__primeiro--texto-botao {
   width: 31.8rem;
   height: 6.6rem;
-  color: white;
+  color: var(--branco);
   border: none;
   border-radius: 6.6rem;
-  background: var(--azul-botao);
+  background: var(--azul-escuro);
   font-size: 2.4rem;
   font-family: "Montserrat";
   font-weight: 700;

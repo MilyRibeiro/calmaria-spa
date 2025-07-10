@@ -6,14 +6,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 16px;
-  padding: 40px 16px;
+  row-gap: 1.6rem;
+  padding: 4rem 1.6rem;
   white-space: nowrap;
 }
 
 .cabecalho__nav--logo {
-  width: 172px;
-  height: 56px;
+  width: 17.2rem;
+  height: 5.6rem;
 }
 
 .cabecalho__nav--lista {
@@ -22,7 +22,7 @@
 
 .cabecalho .cabecalho__nav .cabecalho__nav--line {
   width: 100%;
-  border-bottom: 1px solid black;
+  border-bottom: 0.1rem solid #000000;
 }
 
 .cabecalho .cabecalho__nav .cabecalho__nav--lista {
@@ -31,11 +31,77 @@
 }
 
 .cabecalho .cabecalho__nav .cabecalho__nav--lista a {
-  color: #0c0421;
-  margin: 0 21px;
+  color: var(--lilas-escuro);
+  margin: 0 2.1rem;
   text-decoration: none;
   font-weight: 400;
   line-height: 150%;
+}
+
+.cabecalho__lista-item {
+  display: flex;
+}
+
+.submenu li a:hover {
+  font-weight: 700 !important;
+}
+
+.cabecalho__lista-item .icone {
+  transition: transform 0.5s ease;
+  cursor: pointer;
+  color: var(--lilas-escuro);
+  font-size: 2.2rem;
+  align-self: center;
+}
+
+/* seta submenu */
+.cabecalho__lista-item .icone.active {
+  transform: rotate(180deg);
+}
+
+.cabecalho__nav--lista .submenu {
+  display: none;
+  position: absolute;
+  border: 0.1rem solid #ddd;
+  font-size: 1rem;
+  padding: 1.6rem;
+  border-top: none;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background: var(--cinza-claro);
+  box-shadow: 0.4rem 0.4rem 0.8rem 0rem rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  min-width: 16rem;
+  border-radius: 4px;
+  margin-top: 4rem;
+  font-size: 2.2rem;
+}
+
+.cabecalho__nav--lista .submenu .submenu {
+  left: 100%;
+  top: 1rem;
+}
+
+.submenu li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  display: flex;
+  border-bottom: 0.2rem solid #cad4fa;
+  margin: 0.8rem 0.8rem;
+  min-width: 17rem;
+  height: 4.5rem;
+}
+
+.submenu li:first-child {
+  margin-top: unset;
+}
+
+.submenu li:last-child {
+  margin-bottom: unset;
+  border-bottom: none;
 }
 
 .cabecalho .cabecalho__nav .cabecalho__nav--lista a:hover {
@@ -47,11 +113,21 @@
   /* Tablet */
 
   .cabecalho__nav--logo {
-    width: 270px;
-    height: 88px;
+    width: 27rem;
+    height: 8.8rem;
   }
 
   .cabecalho__nav--lista {
     font-size: 2.2rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .cabecalho .cabecalho__nav {
+    flex-direction: column;
+  }
+
+  .cabecalho .cabecalho__nav .cabecalho__nav--lista {
+    gap: 4rem;
   }
 }
