@@ -1,3 +1,27 @@
+function alternarModal(modalId, abrir) {
+  const modal = document.getElementById(`${modalId}`);
+
+  if (abrir) {
+    modal.style.display = "block";
+  } else {
+    modal.style.display = "none";
+  }
+
+  document.body.style.overflow = abrir ? "hidden" : "auto";
+}
+
+document.addEventListener("keydown", (evento) => {
+  if (evento.key === "Escape") {
+    // fechar o modal de inscrição com esc:
+    alternarModal("ver-modal-inscrito", false);
+
+    // fechar o submenu com esc:
+    document.querySelectorAll(".cabecalho__lista-item").forEach((item) => {
+      alternarSubmenu(item, false);
+    });
+  }
+});
+
 function alternarSubmenu(item, mostrar) {
   const submenu = item.querySelector(".submenu");
 
