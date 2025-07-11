@@ -48,3 +48,29 @@ document.querySelectorAll(".cabecalho__lista-item").forEach((item) => {
     alternarSubmenu(item, !isDisplayed);
   });
 });
+
+// Acordeão:
+const botoesAcordeao = document.querySelectorAll(".botao-acordeao");
+
+botoesAcordeao.forEach((botao) => {
+  botao.addEventListener("click", () => alternarAcordeao(botao));
+});
+
+function alternarAcordeao(botao) {
+  const jaEstaAberto = botao.getAttribute("aria-expanded") === "true";
+
+  botoesAcordeao.forEach((btn) => {
+    btn.setAttribute("aria-expanded", "false");
+    const conteudo = btn.nextElementSibling;
+    conteudo.classList.remove("expandido");
+    conteudo.setAttribute("aria-hidden", "true");
+  });
+
+  if (!jaEstaAberto) {
+    botao.setAttribute("aria-expanded", "true");
+
+    const conteudo = botao.nextElementSibling;
+    conteudo.classList.add("expandido");
+    conteudo.setAttribute("aria-hidden", "false");
+  }
+}
