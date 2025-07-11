@@ -267,7 +267,11 @@
         <p class="infos">
           Reserve seu horário, tire dúvidas e proponha sugestões!
         </p>
-        <button class="btn-contato" aria-label="Clique para Entrar em contato">
+        <button
+          class="btn-contato"
+          onclick="alternarModal('ver-modal-contato', true)"
+          aria-label="Clique para Entrar em contato"
+        >
           Entrar em contato
         </button>
       </div>
@@ -289,6 +293,7 @@
             <!-- Botão para fechar a janela modal 'ver-modal-contato' -->
             <button
               class="cabecalho-modal-fechar"
+              onclick="alternarModal('ver-modal-contato', false)"
               aria-label="Botão para fechar o formulário"
               tabindex="0"
             >
@@ -401,7 +406,13 @@
 
           <div class="rodape-modal">
             <!-- Botão para fechar a janela modal 'ver-modal-contato' -->
-            <button class="btn-enviar" tabindex="0">Enviar</button>
+            <button
+              class="btn-enviar"
+              onclick="alternarModal('ver-modal-contato', false), alternarModal('ver-modal-enviado', true)"
+              tabindex="0"
+            >
+              Enviar
+            </button>
           </div>
         </div>
       </section>
@@ -430,6 +441,7 @@
             <!-- Botão para fechar a janela modal 'ver-modal-enviado' contato-->
             <button
               class="btn-fechar"
+              onclick="alternarModal('ver-modal-enviado', false)"
               tabindex="0"
               aria-label="Fechar formulário enviado"
             >

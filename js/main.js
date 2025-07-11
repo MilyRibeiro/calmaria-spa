@@ -1,10 +1,50 @@
+let ultimoElementoFocado;
+
+function gerenciarFocoNoModal(modalId) {
+  const modal = document.getElementById(`${modalId}`);
+  const elementosDoModal = modal.querySelectorAll(
+    'a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])'
+  );
+  const primeiroElemento = elementosDoModal[0];
+  const ultimoElemento = elementosDoModal[elementosDoModal.length - 1];
+  primeiroElemento.focus();
+
+  modal.addEventListener("keydown", (evento) => {
+    if (evento.key === "Tab") {
+      //Se a tecla Shift+tab for pressionada, e o foco estiver no primeiro elemento, mover para o último:
+      if (evento.shiftKey) {
+        if (document.activeElement === primeiroElemento) {
+          evento.preventDefault();
+          ultimoElemento.focus();
+        }
+      } else {
+        //Se a tecla Tab for pressionada, e o foco estiver no ultimo, mover para o primeiro:
+        if (
+          document.activeElement === ultimoElemento ||
+          !modal.contains(document.activeElement)
+        ) {
+          evento.preventDefault();
+          primeiroElemento.focus();
+        }
+      }
+    }
+  });
+}
+
 function alternarModal(modalId, abrir) {
   const modal = document.getElementById(`${modalId}`);
 
   if (abrir) {
+    ultimoElementoFocado = document.activeElement;
+
     modal.style.display = "block";
+    gerenciarFocoNoModal(modalId);
   } else {
     modal.style.display = "none";
+
+    if (ultimoElementoFocado) {
+      ultimoElementoFocado.focus();
+    }
   }
 
   document.body.style.overflow = abrir ? "hidden" : "auto";
@@ -14,6 +54,10 @@ document.addEventListener("keydown", (evento) => {
   if (evento.key === "Escape") {
     // fechar o modal de inscrição com esc:
     alternarModal("ver-modal-inscrito", false);
+
+    // fechar o modal de contato com esc:
+    alternarModal("ver-modal-contato", false);
+    alternarModal("ver-modal-enviado", false);
 
     // fechar o submenu com esc:
     document.querySelectorAll(".cabecalho__lista-item").forEach((item) => {
